@@ -14,8 +14,8 @@ const Navbar = () => {
       ];
 
   return (
-    <nav className='bg-black text-white flex justify-between items-center px-4 h-16'>
-        <div className='logo font-bold'>Donate Us</div>
+    <nav className='bg-gray-950 text-white flex justify-between items-center px-4 h-16'>
+        <div className='logo font-bold text-lg'>Donate Us</div>
         <ul className='flex justify-between gap-4'>
         {LINKS.map((link,index)=>(
                     <a key={index} href={`#${link.targetId}`} className={`text-sm ${index!==0? "border-l-2 border-neutral-300/20 pl-2":""} hover:opacity-50`} onClick={(e)=>handleScroll(e,link.targetId)}>
