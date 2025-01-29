@@ -7,7 +7,7 @@ import { SERVISES } from '../constants'
 const Servises = () => {
   return (
     <section className='container mx-auto py-16' id="services">
-        <h2 className='mb-8 text-center text-3xl tracking-tighter lg:text-4xl'>
+        <h2 className='mb-8 text-white text-center text-3xl tracking-tighter lg:text-4xl'>
             Our Services
         </h2>
         <div className='grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 justify-center m-10'>
