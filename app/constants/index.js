@@ -11,54 +11,64 @@
 
 export const SERVISES = [
   {
-    image:"/dish1.jpeg",
-    title: "Spaghetti Carbonara",
-    description: "Creamy pasta with bacon and cheese",
+    image:"/Help-Mark-Feed-Senior.webp",
+    title: "The 65 Year Old Is Working Relentlessly To Feed Warm Meals To Senior Citizens",
+    
+    authpic:'VS',
+    author:"Mark D'Souza",
   },
   {
     image: "/dish2.jpeg",
-    title: "Chicken Tikka Masala",
-    description: "Indian curry with tender chicken in spicy sauce",
+    title: "Donation for Sadhus - Help Archaryaji Feed Sadhus",
+    authpic:'VS',
+    author:"By Virindavan Sandhu Seva",
   },
   {
     image:"/dish3.jpeg",
     title: "Caprese Salad",
-    description: "Fresh tomatoes, mozzarella, and basil with balsamic glaze",
+    authpic:'VS',
+    author:"Mark D'Souza",
   },
   {
     image:"/dish4.jpeg",
     title: "Sushi Roll",
-    description: "Assorted seafood and vegetables wrapped in seaweed and rice",
+    authpic:'VS',
+    author:"Mark D'Souza",
   },
   {
     image:"/dish5.jpeg",
     title: "Chocolate Lava Cake",
-    description: "Decadent chocolate cake with a gooey center",
+authpic:'VS',
+    author:"Mark D'Souza",
   },
   {
     image:"/dish6.jpeg",
     title: "Greek Salad",
-    description: "Crisp lettuce, olives, feta cheese, and tangy dressing",
+   authpic:'VS',
+    author:"Mark D'Souza",
   },
   {
     image:"/dish7.jpeg",
     title: "Pad Thai",
-    description: "Stir-fried rice noodles with shrimp, tofu, and peanuts",
+ authpic:'VS',
+    author:"Mark D'Souza",
   },
   {
     image:"/dish8.jpeg",
     title: "Peking Duck",
-    description: "Crispy duck with pancakes, cucumber, and hoisin sauce",
+    authpic:'VS',
+    author:"Mark D'Souza",
   },
   {
     image:"/dish9.jpeg",
     title: "Beef Wellington",
-    description: "Tender beef filet wrapped in pastry with mushrooms and herbs",
+ authpic:'VS',
+    author:"Mark D'Souza",
   },
   {
     image:"/dish10.jpeg",
     title: "Tiramisu",
-    description:
-      "Italian dessert with layers of coffee-soaked biscuits and mascarpone",
+   authpic:'VS',
+      author:"Mark D'Souza",
   },
 ];
