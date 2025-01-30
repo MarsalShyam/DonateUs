@@ -20,8 +20,14 @@ export default function Home() {
 
     <div className="bg-white h-1 opacity-10">
     </div>
+    <div className='bg-[#f0e8e8d0]'>
     <Services/>
- 
+    </div>
+    
+    <div className="bg-white h-1 opacity-10">
+    </div>
     </>
   );
 }
+// to-[#FFFFFF]
+// bg-gradient-to-b from-[#00091dca] to-[#e9710e]
