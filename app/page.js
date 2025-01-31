@@ -1,5 +1,6 @@
 
 import Services from './components/Servises.js';
+import About from './components/About.js';
 
 
 export default function Home() {
@@ -20,11 +21,17 @@ export default function Home() {
 
     <div className="bg-white h-1 opacity-10">
     </div>
-    <div className='bg-[#f0e8e8d0]'>
+    <div className='bg-white'>
     <Services/>
     </div>
     
     <div className="bg-white h-1 opacity-10">
+    </div>
+    <div>
+      <About/>
+    </div>
+    <div>
+      <About/>
     </div>
     </>
   );
