@@ -1,13 +1,14 @@
 "use client"
-import {React,useState} from 'react';
+import {React,useState,useRef, useEffect} from 'react';
 import { useSession, signIn, signOut } from "next-auth/react"
 
 import Link from 'next/link'
 
 const Navbar = () => {
-  const [showdropdown,Setshowdropdown]=useState(false)
+  const { data: session } = useSession();
+  const [showDropdown,setShowDropdown]=useState(false);
 
-  const { data: session } = useSession()
+  
   // if (session) {
   //   return (
   //     <>
@@ -23,9 +24,18 @@ const Navbar = () => {
     { text: "Contact", targetId: "contact" },
     { text: "Sign Up", targetId: "singup" },
     { text: "Login", targetId: "login" },
-
-
   ];
+  const dropdownRef=useRef(null);
+
+  useEffect(()=>{
+    function handleClickOutside(event){
+      if(dropdownRef.current && !dropdownRef.current.contains(event.target)){
+        setShowDropdown(false);
+      }
+    }
+    document.addEventListener('mousedown',handleClickOutside);
+    return ()=>document.removeEventListener("mousedown",handleClickOutside);
+  },[]);
 
   return (
     <nav className='bg-gray-950 text-white flex justify-between items-center px-4 h-16'>
@@ -39,13 +49,13 @@ const Navbar = () => {
                     </Link>
                 ))}
         </ul> */}
-      <div className='relative'>
+      <div className='relative' ref={dropdownRef}>
         {session && 
-          <><button onClick={()=>{Setshowdropdown(!showdropdown)}} onBlur={()=>{setTimeout(()=>{Setshowdropdown(false)},100);}} id="dropdownInformationButton" data-dropdown-toggle="dropdownInformation" className="mx-4 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Welcome {session.user.email}<svg className="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+          <><button onClick={()=>{setShowDropdown(!showDropdown)}} id="dropdownInformationButton" data-dropdown-toggle="dropdownInformation" className="mx-4 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Welcome {session.user.email}<svg className="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
             <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4" />
           </svg>
           </button>
-          <div id="dropdownInformation" className={`z-10 ${showdropdown?"":"hidden"} absolute left-[125px] bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700 dark:divide-gray-600`}>
+          <div id="dropdownInformation" className={`z-10 ${showDropdown?"":"hidden"} absolute left-[125px] bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700 dark:divide-gray-600`}>
               <div className="px-4 py-3 text-sm text-gray-900 dark:text-white">
                 <div>
                   shyamGanesh
@@ -54,7 +64,7 @@ const Navbar = () => {
               </div>
               <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
               <li>
-                  <Link href="/" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Home</Link>
+                  <Link href={"/"} className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Home</Link>
                 </li>
                 <li>
                   <Link href={"/dashboard"} className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Profile</Link>
