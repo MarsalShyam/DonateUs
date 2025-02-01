@@ -1,4 +1,6 @@
-
+"use client"
+import React from 'react';
+import {useSession,signIn,signOut} from "next-auth/react"
 import Services from './components/Servises.js';
 import About from './components/About.js';
 
