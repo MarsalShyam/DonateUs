@@ -14,7 +14,7 @@ const Login = () => {
     return (
          
         <section id='login'>
-            <div className='text-white py-14 container mx-auto'>
+            <div className='text-white py-14 container mx-auto mx-5'>
                 <h1 className='text-center font-bold text-3xl'>Login to Get your fans to support you</h1>
                 <div className="flex flex-col items-center gap-2 min-h-screen p-10">
 

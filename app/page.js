@@ -8,7 +8,7 @@ import About from './components/About.js';
 export default function Home() {
   return (
     <>
-    <div className="flex justify-center flex-col items-center text-white h-[44vh] gap-3">
+    <div className="m-8 flex justify-center flex-col items-center text-white h-[44vh] gap-3">
       <div className="font-bold text-5xl">
         Donate Us for Hunger
       </div>
