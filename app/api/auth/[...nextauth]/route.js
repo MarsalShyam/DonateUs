@@ -10,6 +10,29 @@ export const authOptions = NextAuth({
     }),
     // ...add more providers here
   ],
+
+  
+  callbacks: {
+    async signIn({ user, account, profile, email, credentials }) {
+
+      if(account.provider=="github"){
+        //Connect to the date
+        const client=await mongose.conect()
+
+      }
+      
+    },
+    // async redirect({ url, baseUrl }) {
+    //   return baseUrl
+    // },
+    // async session({ session, user, token }) {
+    //   return session
+    // },
+    // async jwt({ token, user, account, profile, isNewUser }) {
+    //   return token
+    // }
+
+}
 })
 
 export {authOptions as GET, authOptions as POST}
