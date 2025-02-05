@@ -28,12 +28,20 @@ const Dash = () => {
             <input value={form.last_name?form.last_name:""} onChange={handleChange} name="last_name" type="text" id="last_name" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Kumar" required />
         </div>
         <div>
-            <label htmlFor="company" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Company</label>
-            <input value={form.company?form.company:""} onChange={handleChange} name="company" type="text" id="company" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Marsal" required />
+            <label htmlFor="username" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Username</label>
+            <input value={form.username?form.username:""} onChange={handleChange} name="username" type="text" id="username" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Username" required />
         </div>  
         <div>
             <label htmlFor="phone" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone number</label>
             <input value={form.phone?form.phone:""} onChange={handleChange} name="phone" type="text" id="phone" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="9508868365" pattern="[0-9][0-9][0-9][0-9][0-9][0-9][0-9]" required />
+        </div>
+        <div>
+            <label htmlFor="profilepic" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Profile Pic</label>
+            <input value={form.profilepic?form.profilepic:""} onChange={handleChange} name="profilepic" type="text" id="profilepic" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Profile Pic" required />
+        </div>
+        <div>
+            <label htmlFor="coverpic" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Cover Pic</label>
+            <input value={form.coverpic?form.coverpic:""} onChange={handleChange} name="coverpic" type="text" id="coverpic" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Cover Pic" required />
         </div>
         
     </div>
@@ -50,12 +58,12 @@ const Dash = () => {
         <input  type="password" id="confirm_password" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="•••••••••" required />
     </div> 
     <div className="mb-6">
-        <label htmlFor="rozorpay-id" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Rozorpay Id</label>
-        <input value={form.rozorpay-id?form.rozorpay-id:""} onChange={handleChange} name="rozorpay-id" type="rozorpay-id" id="rozorpay-id" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="gs4fg436fete54w" required />
+        <label htmlFor="rozorpayid" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Rozorpay Id</label>
+        <input value={form.rozorpayid?form.rozorpayid:""} onChange={handleChange} name="rozorpayid" type="rozorpay-id" id="rozorpayid" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="gs4fg436fete54w" required />
     </div> 
     <div className="mb-6">
-        <label htmlFor="rozorpay-secret" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Rozorpay Secret</label>
-        <input value={form.rozorpay-secret?form.rozorpay-secret:""} onChange={handleChange} name="rozorpay-secret" type="rozorpay-secret" id="rozorpay-secret" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="4874512434a4a" required />
+        <label htmlFor="rozorpaysecret" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Rozorpay Secret</label>
+        <input value={form.rozorpaysecret?form.rozorpaysecret:""} onChange={handleChange} name="rozorpaysecret" type="rozorpay-secret" id="rozorpaysecret" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="4874512434a4a" required />
     </div> 
     <div className="flex items-start mb-6">
         <div className="flex items-center h-5">

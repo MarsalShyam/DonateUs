@@ -6,11 +6,20 @@ import {useRouter} from 'next/navigation'
 const Login = () => {
     const { data: session } = useSession()
     const router=useRouter();
-    if(session) {
+
+    //handle redirection inside useEffect to avoid side effects during render
+    React.useEffect(()=>{
+        if(session) {
         
-        router.push('/dashboard');
-        return null;//prevent rendering login UI when redirecting
-      }
+            router.push('/dashboard');
+            
+          }
+    },[session,router])
+    
+    if(session){
+        //return null to avoid redering the loginn UI while redirecting
+        return null;
+    }
     return (
          
         <section id='login'>
