@@ -7,15 +7,21 @@ const Dash = () => {
     const {data: session}=useSession()
 
     const [form,setform]=useState({})
+
     const handleChange=(e)=>{
         setform({...form,[e.target.name]:e.target.value})
+    }
+
+    const handleSubmit=(e)=>{
+        e.preventDefault();//prevent the default form submission
+        console.log(form);
     }
 
   return (
     <section className='dashboard flex justify-center'>
       <div className=' w-[70%] md:w-[50%] lg:w-[40%] flex flex-col p-2'>
     <h1 className='text-3xl font-bold text-center m-5'>Welcome to your Dashboard</h1>
-<form>
+<form onSubmit={handleSubmit} >
     
     <div className="grid gap-6 mb-6 md:grid-cols-2">
         <div>
@@ -33,7 +39,7 @@ const Dash = () => {
         </div>  
         <div>
             <label htmlFor="phone" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone number</label>
-            <input value={form.phone?form.phone:""} onChange={handleChange} name="phone" type="text" id="phone" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="9508868365" pattern="[0-9][0-9][0-9][0-9][0-9][0-9][0-9]" required />
+            <input value={form.phone?form.phone:""} onChange={handleChange} name="phone" type="text" id="phone" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="9508868365"  required />
         </div>
         <div>
             <label htmlFor="profilepic" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Profile Pic</label>
@@ -59,11 +65,11 @@ const Dash = () => {
     </div> 
     <div className="mb-6">
         <label htmlFor="rozorpayid" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Rozorpay Id</label>
-        <input value={form.rozorpayid?form.rozorpayid:""} onChange={handleChange} name="rozorpayid" type="rozorpay-id" id="rozorpayid" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="gs4fg436fete54w" required />
+        <input value={form.rozorpayid?form.rozorpayid:""} onChange={handleChange} name="rozorpayid" type="text" id="rozorpayid" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="gs4fg436fete54w" required />
     </div> 
     <div className="mb-6">
         <label htmlFor="rozorpaysecret" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Rozorpay Secret</label>
-        <input value={form.rozorpaysecret?form.rozorpaysecret:""} onChange={handleChange} name="rozorpaysecret" type="rozorpay-secret" id="rozorpaysecret" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="4874512434a4a" required />
+        <input value={form.rozorpaysecret?form.rozorpaysecret:""} onChange={handleChange} name="rozorpaysecret" type="text" id="rozorpaysecret" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="4874512434a4a" required />
     </div> 
     <div className="flex items-start mb-6">
         <div className="flex items-center h-5">
