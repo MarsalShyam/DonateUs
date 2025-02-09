@@ -6,16 +6,46 @@ import {useSession,signIn, signOut} from 'next-auth/react'
 const Dash = () => {
     const {data: session}=useSession()
 
-    const [form,setform]=useState({})
+    const [form,setform]=useState({
+    first_name: "",
+    last_name: "",
+    email: session?.user?.email || "",
+    phone: "",
+    profilepic: "",
+    coverpic: "",
+    rozorpayid: "",
+    rozorpaysecret: "",
+    password: "",
+    })
 
     const handleChange=(e)=>{
         setform({...form,[e.target.name]:e.target.value})
     }
 
-    const handleSubmit=(e)=>{
+    const handleSubmit=async (e)=>{
         e.preventDefault();//prevent the default form submission
-        console.log(form);
+        console.log("Form Data:",form);
+        try{
+            const response = await fetch('/api/user/update', {
+                method: 'PATCH',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(form),
+              });
+              const data = await response.json();
+      if (response.ok) {
+        alert('Profile updated successfully!');
+      } else {
+        console.error(data.message);
+        alert('Error updating profile. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error submitting the form:', error);
+      alert('An unexpected error occurred.');
     }
+        
+    };
 
   return (
     <section className='dashboard flex justify-center'>
@@ -81,7 +111,7 @@ const Dash = () => {
 </form>
 </div>
 </section>
-  )
-}
+  );
+};
 
 export default Dash

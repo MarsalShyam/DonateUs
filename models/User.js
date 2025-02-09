@@ -6,10 +6,11 @@ const UserSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true },
   username: { type: String, required: true }, // Ensure this is populated when saving
   phone:{type:String,default:""},
-  profilpic:{type:String,default:""},
+  profilepic:{type:String,default:""},
   coverpic:{type:String,default:""},
   rozorpayid:{type:String,default:""},
   rozorpaysecret:{type:String,default:""},
+  password:{type:String,default:""},
   updatedAt: { type: Date, default: Date.now }, // Optional: Track user creation
   
 });

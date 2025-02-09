@@ -54,6 +54,7 @@ export const authOptions = NextAuth({
         }
 
         return true; // Allow sign-in
+        
       } catch (error) {
         console.error("Error during signIn callback:", error);
         return false; // Reject sign-in on error
