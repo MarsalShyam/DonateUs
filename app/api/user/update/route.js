@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import User from "@/models/User";
+import connectDb from "@/db/connectDb";
 
 export async function PATCH(req) {
   console.log("Request received:", req.method);
@@ -29,9 +30,10 @@ export async function PATCH(req) {
     }
 
     // Connect to the database if not already connected
-    if (mongoose.connection.readyState !== 1) {
-      await mongoose.connect("mongodb://localhost:27017/donateus");
-    }
+    // if (mongoose.connection.readyState !== 1) {
+    //   await mongoose.connect("mongodb://localhost:27017/donateus");
+    // }
+    await connectDb();
 
     // Update user details in the database
     const updatedUser = await User.findOneAndUpdate(

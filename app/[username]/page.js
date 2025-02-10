@@ -58,7 +58,7 @@ const Username = async ({ params }) => {
 
                 <span> Shubgam donated <span className='font-bold'>$30</span> with a message "I support You ❤️"</span>
               </li>
-             
+
             </ul>
 
           </div>
