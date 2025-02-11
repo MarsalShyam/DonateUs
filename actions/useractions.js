@@ -7,8 +7,10 @@ import User from "@/models/User"
 
 export const initiate = async (amount, to_username, paymentform) => {
     await connectDb();
+    console.log("KEY_IDserver:", process.env.KEY_ID); // Debugging key_id
+    console.log("KEY_SECRETserver:", process.env.KEY_SECRET);
     //from doc paste the instance
-    var instance = new Razorpay({ key_id:process.env.KEY_ID, key_secret:process.env.KEY_SECRET})
+    var instance = new Razorpay({ key_id: process.env.KEY_ID, key_secret: process.env.KEY_SECRET})
 
     // instance.orders.create({
     //     amount: 5000,
@@ -30,7 +32,7 @@ export const initiate = async (amount, to_username, paymentform) => {
 
     //create a payment object which shows a pending payment in the database
     await Payment.create({
-        oid:x.id,amount:amount,to_username:to_username,name:paymentform.name,message:paymentform.message
+        oid:x.id,amount:amount,to_user:to_username,name:paymentform.name,message:paymentform.message
     })
     return x;
 }
